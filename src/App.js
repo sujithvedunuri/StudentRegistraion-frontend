@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React, {  useState } from 'react'
 import './App.css';
+import FormBar from './components/FormBar'
+import StudenstList from './components/StudenstList'
 
 function App() {
+  const [isGetStudents,setGetStudents] = useState(true);
+  const am = isGetStudents? <StudenstList/>:<div>how</div>
+
   return (
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>sample project frontend</h1>
+     <FormBar isGetStudents={isGetStudents} setGetStudents ={setGetStudents}/>
+      {am}
     </div>
+
   );
 }
-
+ 
 export default App;
